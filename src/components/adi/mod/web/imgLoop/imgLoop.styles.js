@@ -27,27 +27,37 @@ export default [
       }
     },
     theme: {
-      root: ['mod-space']
+      root: []
     },
     options: {
       theme: {},
       config: {
         ...emptyData,
-        imgLoop: _.merge({}, {height: '150px'}, emptyData.imgLoop)
+        imgLoop: _.merge({}, { height: '150px' }, emptyData.imgLoop)
       }
     },
-    cover: require('@/../static/adi/imgLoop/thumbnail.png')
+    cover: require('@/../static/adi/imgLoop/thumbnail.png'),
+    preview: {
+      outter: {
+        height: '40px'
+      }
+    }
   },
 
   // style 1
   {
     theme: {
-      root: ['mod-space']
+      root: []
     },
     options: {
       theme: {},
       config: { ...emptyData }
     },
-    cover: require('@/../static/adi/imgLoop/thumbnail.png')
+    cover: require('@/../static/adi/imgLoop/thumbnail.png'),
+    preview: {
+      outter: {
+        height: '79px'
+      }
+    }
   }
 ]

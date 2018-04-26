@@ -31,6 +31,9 @@ export default [
     templateID: 0,
     data: {
       // 定义mod根div的样式
+      colGroup: {
+        'margin-top': '20px'
+      },
       logo: {
         height: '87px',
         width: '87px'
@@ -61,7 +64,7 @@ export default [
       colGroupARow: { gutter: 10 }
     },
     theme: {
-      root: ['mod-space'],
+      root: [],
       colGroupRow: ['mod-full-width'],
       businessName: ['font_1', 'color_4'],
       tagline: ['font_3', 'color_2'],
@@ -84,7 +87,12 @@ export default [
         ...defaultData
       }
     },
-    cover: require('@/../static/adi/title/title1.png')
+    cover: require('@/../static/adi/title/title1.png'),
+    preview: {
+      outter: {
+        height: '47px'
+      }
+    }
   },
   {
     // style 1
@@ -95,6 +103,9 @@ export default [
         height: '87px',
         width: '87px',
         margin: 'auto'
+      },
+      colLogo: {
+        'margin-top': '20px'
       },
       colCouple: {
         'min-width': '200px',
@@ -121,7 +132,7 @@ export default [
       rootRow: { gutter: 10 }
     },
     theme: {
-      root: ['mod-space'],
+      root: [],
       businessName: ['font_1', 'color_4'],
       tagline: ['font_3', 'color_2'],
       menu: ['mod-full-width'],
@@ -143,6 +154,11 @@ export default [
         ...defaultData
       }
     },
-    cover: require('@/../static/adi/title/title2.png')
+    cover: require('@/../static/adi/title/title2.png'),
+    preview: {
+      outter: {
+        height: '63px'
+      }
+    }
   }
 ]

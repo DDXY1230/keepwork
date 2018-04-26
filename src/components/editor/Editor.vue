@@ -5,7 +5,7 @@
         <el-button-group>
           <el-button class="iconfont icon-mulu" :class='{"el-button--primary": activeComponent=="FileManager"}' @click="changeView('FileManager')"></el-button>
           <!-- <el-button class="btn-bigfile" :class='{"el-button--primary": activeComponent=="ModPropertyManager"}' @click="changeView('ModPropertyManager')"></el-button> -->
-          <el-button class="iconfont icon-tianjiamokuai" :class='{"el-button--primary": activeComponent=="ModsList"}' @click="changeView('ModsList')"></el-button>
+          <el-button v-if='activePage' class="iconfont icon-tianjiamokuai" :class='{"el-button--primary": activeComponent=="ModsList"}' @click="changeView('ModsList')"></el-button>
           <!-- <el-button class="btn-search" :class='{"el-button--primary": activeComponent=="Search"}' @click="changeView('Search')"></el-button> -->
         </el-button-group>
       </el-row>
@@ -26,10 +26,11 @@
         </el-button-group> -->
         <el-button-group>
           <!-- <el-button class="btn-adaptive" title="自适应"></el-button> -->
-          <el-button class="iconfont icon-xinchuangkouyulan" title="新窗口打开" @click='showPreview'></el-button>
+          <!-- <el-button class="iconfont icon-xinchuangkouyulan" title="新窗口打开" @click='showPreview'></el-button> -->
+          <el-button class="iconfont icon-xinchuangkouyulan" title="新窗口打开" @click='showPage'></el-button>
         </el-button-group>
         <div class="code-win-swich">
-          <span>显示代码</span>
+          <span>{{$t('editor.showCode')}}</span>
           <el-switch v-model="isCodeWinShow" @change='toggleCodeWin'>
           </el-switch>
         </div>
@@ -124,6 +125,8 @@ export default {
   },
   computed: {
     ...mapGetters({
+      activePage: 'activePage',
+      activePageUrl: 'activePageUrl',
       personalSiteList: 'user/personalSiteList',
       activeComponent: 'activeComponentType',
       showingCol: 'showingCol',
@@ -245,8 +248,11 @@ export default {
       this[leftColName] = this[leftColName] + diffPercent
       this[rightColName] -= diffPercent
     },
-    showPreview() {
-      this.$emit('showPreview')
+    // showPreview() {
+    //   this.$emit('showPreview')
+    // },
+    showPage() {
+      window.open(this.activePageUrl)
     },
     dragMouseUp() {
       this.resizeWinParams.isResizing = false
@@ -287,7 +293,7 @@ export default {
   overflow: auto;
 }
 .manager-win {
-  flex-basis: 440px;
+  flex-basis: 460px;
   flex-shrink: 0;
 }
 .manager-content-box {

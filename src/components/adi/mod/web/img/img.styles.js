@@ -26,13 +26,18 @@ export default [
       colImg: { span: 24 }
     },
     theme: {
-      root: ['mod-space']
+      root: []
     },
     options: {
       theme: {},
       config: { ...emptyData }
     },
-    cover: require('@/../static/adi/img/cover/imgOne.png')
+    cover: require('@/../static/adi/img/cover/imgOne.png'),
+    preview: {
+      outter: {
+        height: '157px'
+      }
+    }
   },
 
   // style 1
@@ -55,12 +60,17 @@ export default [
       colImg: { span: 24 }
     },
     theme: {
-      root: ['mod-space']
+      root: []
     },
     options: {
       theme: {},
       config: { ...emptyData }
     },
-    cover: require('@/../static/adi/img/cover/imgTwo.png')
+    cover: require('@/../static/adi/img/cover/imgTwo.png'),
+    preview: {
+      outter: {
+        height: '209px'
+      }
+    }
   }
 ]

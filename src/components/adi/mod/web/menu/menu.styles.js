@@ -3,20 +3,16 @@ export default [
   {
     templateID: 0,
     data: {
-      // 定义mod根div的样式
       menu: {
         height: '50px',
         margin: 'auto'
-      },
-      colMenu: {
-        'margin-top': '20px'
       }
     },
     props: {
       rootRow: { gutter: 10 }
     },
     theme: {
-      root: ['mod-space'],
+      root: [],
       menu: ['mod-full-width', 'font_3'],
       colMenu: ['bg_color_7']
     },
@@ -40,6 +36,11 @@ export default [
         }
       }
     },
-    cover: require('@/../static/adi/menu/menu.png')
+    cover: require('@/../static/adi/menu/menu.png'),
+    preview: {
+      outter: {
+        height: '14px'
+      }
+    }
   }
 ]
